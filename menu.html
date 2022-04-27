@@ -13,17 +13,18 @@
     <div class="menu">
         <div class="window-menu">
             <div class="window-menu--buttons">
-                <button class="button-style">Об игре</button>
-                <button class="button-style">Правила</button>
-                <button class="button-style"> Играть</button>
+                <a href="#popup" class="button-style">Об игре</a>
+                <a href="#popup2" class="button-style">Правила</a>
+                <a href="game.html" class="button-style"> Играть</a>
             </div>
         </div>
     </div>
 
     <div id="popup" class="popup">
+        <a href="#" class="popup__area"></a>
         <div class="popup__body">
             <div class="popup__content">
-                <a class="popup__close">x</a>
+                <a href="#" class="popup__close">x</a>
                 <div class="popup__title">
                     Об игре "Угадай слово"
                 </div>
@@ -46,6 +47,35 @@
         </div>
     </div>
 
+    <div id="popup2" class="popup">
+        <a href="#" class="popup__area"></a>
+        <div class="popup__body">
+            <div class="popup__content">
+                <a href="#" class="popup__close">x</a>
+                <div class="popup__title">
+                    Правила Игры
+                </div>
+                <div class="popup__text">
+                    <p>
+                        Постарайтесь отгадывать зашифрованное слово, расставляя буквы в правильном порядке. Чем больше слов 
+                        угадаете, тем больше баллов наберете.
+                        </p>
+                    <p>
+                        Основные правила: <br>
+                        В центре буквы разбросаны в случайном порядке, в самом верхнем углу экрана отображаются кругляшки, 
+                        на месте которых должны быть помещены эти же буквы, но таким образом, чтобы получилось понятное слово. 
+                    </p> <p>
+                        Если все верно разместите, то начисляться соответствующее количество баллов, которые можно потом тратить на подсказки. 
+                        При сложностях, связанных с отгадыванием слова, подсказка придется весьма кстати, но за нее нужно заплатить определенную сумму очков. 
+                    </p><p>
+                        Также есть возможность текущее слово заменить на новое, а подобное действие не бесплатное, 
+                        оно обойдется по конкретной стоимости, представленной в виде очков, набранных за разгадывание предыдущих слов.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <script>
     </script>
 </body>

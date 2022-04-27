@@ -1,7 +1,12 @@
+body{
+    background-color: #000000;
+}
 .canvas{
     border: 5px solid rgb(0, 0, 0);
     box-shadow: 10px 15px 15px rgb(144, 144, 144);
     margin: 20px;
     background-image: url("/pictures/b.webp");
     background-repeat: no-repeat;
+    margin-left: 15%;
+    margin-top: 5%;
 }
