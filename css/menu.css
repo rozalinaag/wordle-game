@@ -1,0 +1,103 @@
+.menu {
+    width: 1990px;
+    height: 1100px;
+    border: 5px solid rgb(0, 0, 0);
+    box-shadow: 10px 15px 15px rgb(144, 144, 144);
+    margin: 20px;
+    background-image: url("/pictures/b.webp");
+    background-repeat: no-repeat;
+    z-index: -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.window-menu{
+    width: 400px;
+    height: 500px;
+    border: 7px solid rgb(141, 35, 88);
+    box-shadow: 10px 15px 15px rgb(144, 144, 144);
+    background-image: linear-gradient(to top, rgba(30,87,153,0), rgba(30, 145, 153, 0.8), rgb(30, 132, 153),
+                      rgb(30, 137, 153), rgb(41, 204, 216), rgb(30, 128, 153), rgb(30, 124, 153),
+                      rgba(30, 122, 153, 0.8),rgba(30,87,153,0));
+    border-radius: 5%;
+}
+.window-menu--buttons{
+    margin-top: 80px;
+}
+.button-style{
+    text-decoration: none;
+    display: inline-block;
+    width: 360px;
+    height: 80px;
+    line-height: 45px;
+    border-radius: 45px;
+    margin: 10px 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 3px;
+    font-weight: 600;
+    color: #8e0047;
+    background: white;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, .1);
+    transition: .3s;
+
+}
+.button-style:hover{
+    background: #d023a8;
+    box-shadow: 0 15px 20px rgba(46, 229, 157, .4);
+    color: white;
+    transform: translateY(-7px);
+}
+
+.popup{
+    position: fixed;
+    width: 1990px;
+    height: 1100px;
+    margin: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+    font-family: 'Courier New', Courier, monospace;
+    
+    
+}
+.popup__body{
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 10px;
+   
+}
+.popup__close{
+    position: absolute;
+    right: 8px;
+    top: 10px;
+    font-size: 40px;
+    text-decoration: none;
+}
+
+.popup__content{
+    background-color: white;
+    color: black;
+    max-width: 800px;
+    padding: 30px;
+    position: relative;
+    box-shadow: 10px 15px 15px rgb(87, 87, 87);
+    border-radius: 5px;
+}
+
+.popup__text{
+    text-indent: 30px;
+    font-size: 30px;
+    text-align: justify;
+}
+
+.popup__title{
+    font-size: 50px;
+    margin: 0 0 1em 0;
+    text-align: center;
+}
