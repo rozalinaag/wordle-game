@@ -52,6 +52,9 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         
     };
+    ok.onclick = function() {  
+        handleSubmitWord();
+    };
     
     function updateCounter(number) {
 

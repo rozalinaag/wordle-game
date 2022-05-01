@@ -95,6 +95,14 @@ header{
     border-bottom: 1px solid rgb(78, 49, 49);
     
 }
+
+.buttons{
+    display: flex;
+    flex-direction: column;
+}
+#ok{
+    margin-bottom: 6px;
+}
 .header-top{
     display: flex;
     justify-content: center;
