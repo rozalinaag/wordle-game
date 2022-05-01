@@ -1,5 +1,5 @@
 body{
-    background-color: #000000;
+    background-color: black;
 }
 
 .menu {
@@ -9,7 +9,7 @@ body{
     box-shadow: 10px 15px 15px rgb(144, 144, 144);
     margin-left: 15%;
     margin-top: 5%;
-    background-image: url("/pictures/b.webp");
+    background-image: url("../pictures/b.webp");
     background-repeat: no-repeat;
     z-index: -1;
     display: flex;

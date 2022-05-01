@@ -1,6 +1,3 @@
-import {createSquares} from './functions/createSquares.js'; 
-import {showColorLetters} from './functions/color.js';
-import {updateCounter} from './functions/counter.js'
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -11,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let word = "dairy";
     let counterWord = 0;
     let guessedWordCount = 0;
+    let music = false;
 
     const keys = document.querySelectorAll('.keyboard-row button');
 
@@ -22,8 +20,11 @@ document.addEventListener("DOMContentLoaded", () => {
     whoosh.src = "audio/whoosh.mp3";
     right.src = "audio/right.mp3";
     notright.src = "audio/notright.mp3";
-    space.play();
+    space.play(); 
     
+    function musicPlay(){ 
+        space.play();
+    }
 
     hint.onclick = function() {
         let isBoss = confirm("Подсказка стоит 1 балл. Первоначально введите слово и затем нажмите <Подсказка>. Желтый - такая буква есть, но стоит не правильно, зеленый - буква в правильном месте");
@@ -49,10 +50,28 @@ document.addEventListener("DOMContentLoaded", () => {
             availableSpace = 1;
             updateCounter(-1);
         }
+        
     };
     
-   
+    function updateCounter(number) {
 
+        const counter = document.getElementById('counter');
+        const c = +counter.innerText;
+        counter.innerText = c + number;
+        
+    }
+
+    function createSquares() {
+        const gameBoard = document.getElementById("board");
+    
+        for (let index = 0; index < 5; index++) {
+            let square = document.createElement("div");
+            square.classList.add("square");
+            square.classList.add("animate__animated");
+            square.setAttribute("id", index + 1);
+            gameBoard.appendChild(square);
+        }
+    }
     
     function getCurrentWordArr() {
         const numberOfGuessWords = guesseWords.length;
@@ -153,6 +172,11 @@ document.addEventListener("DOMContentLoaded", () => {
         keys[i].onclick = ({ target }) => {
             const letter = target.getAttribute("data-key");
 
+            if (!music){
+                musicPlay();
+                music=false;
+            }
+
             if (letter == 'enter') {
                 handleSubmitWord();
                 return;
@@ -166,4 +190,46 @@ document.addEventListener("DOMContentLoaded", () => {
             updateGuessedWords(letter);
         }
     }
+
+        //если буква на правильном месте, то красив в зеленый цвет
+    function getTileColor(word, letter, index) {
+        
+        const isCorrectLetter = word.includes(letter);
+
+        if (!isCorrectLetter) {
+            return "rgb(58, 58, 60)";
+        }
+
+        const letterInThatPosition = word.charAt(index);
+        const isCorrectPosition = letter === letterInThatPosition;
+
+        if (isCorrectPosition) {
+            return "rgb(83, 141, 78)";
+        }
+
+        return "rgb(181, 159, 59)";
+    }
+
+
+    function showColorLetters(word, currentWordArr, color=null) {
+    const firstLetterId = 1;
+
+    const interval = 200;
+    let tileColor;
+    currentWordArr.forEach((letter, index) => {
+        setTimeout(() => {
+            if (color == null){
+                tileColor = getTileColor(word, letter, index);
+            }
+            else{
+                tileColor = color;
+            }
+            const letterId = firstLetterId + index;
+            const letterEl = document.getElementById(letterId);
+            letterEl.classList.add("animate__flipInX");
+            letterEl.style = `background-color: ${tileColor}; border-color:${tileColor}`;
+        }, interval * index)
+    });
+    }
+
 })
