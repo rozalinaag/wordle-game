@@ -15,14 +15,41 @@ body {
 }
 
 .canvas{
-    border: 5px solid rgb(0, 0, 0);
-    box-shadow: 10px 15px 15px rgb(144, 144, 144);
-    margin: 20px;
-    background-image: url("/pictures/b.webp");
-    background-repeat: no-repeat;
-    margin-left: 15%;
-    margin-top: 5%;
+   
 }
+.counter{
+    margin-left: 50px;
+    color: yellow;
+}
+.counter--number{
+    font-size: 30px;
+    text-align: center;
+}
+.hint{  
+    margin-left: 40px;
+    text-decoration: none;
+    display: inline-block;
+    width: 140px;
+    height: 45px;
+    line-height: 45px;
+    border-radius: 45px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 3px;
+    font-weight: 600;
+    color: #524f4e;
+    background: rgb(215, 215, 215);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, .1);
+    transition: .3s;
+}
+.hint:hover {
+    background: #2EE59D;
+    box-shadow: 0 15px 20px rgba(46, 229, 157, .4);
+    color: white;
+    transform: translateY(-7px);
+  }
 
 #container{
     display: flex;
@@ -30,6 +57,27 @@ body {
     height: 100%;
     align-items: center;
     flex-direction: column;
+}
+.next{
+    text-align: center;
+}
+.letters{
+    display: flex;
+    font-size: 48px;
+    font-family: 'Montserrat', sans-serif;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+.letter{
+    font-family: 'Montserrat', sans-serif;
+    border: 2px solid black;
+    background-color: rgb(247, 244, 244);
+    border-radius: 5px;
+    margin: 0 5px 0 0px;
+    text-align: center;
+    min-width: 60px;
+    min-height: 60px;
 }
 
 #game {
@@ -43,6 +91,10 @@ body {
 
 header{
     border-bottom: 1px solid rgb(78, 49, 49);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 .title {
     color: gainsboro;
@@ -60,6 +112,7 @@ header{
     align-items: center;
     flex-grow: 1;
     overflow: hidden;
+    flex-wrap: wrap;
 }
 
 #board {
@@ -87,6 +140,7 @@ header{
 
   #keyboard-container {
     height: 200px;
+    margin-bottom: 5%;
 }
   
 .keyboard-row {

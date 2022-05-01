@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/style.css" rel="stylesheet" type="text/css">
     <title>Wordle</title>
-    <script src = "js/script.js">
+    <script type = "module" src = "js/script.js">
+    </script>
+    <script src = "js/canvas.js">
     </script>
     <link
     rel="stylesheet"
@@ -14,21 +16,46 @@
   />
 </head>
 <body style="margin: 0;">
-    <!-- <canvas id="canvas" style="display: block;" width="3000", height="3000" class="canvas"> Your browser don't support canvas!</canvas> -->
 
+    
+    
     <div id="container">
-        <div id="game">   
+        
+        <div id="game">
+            
             <header>
+                <div class="counter">
+                    <h1>Счет:</h1>
+                    <div class="counter--number" data-target ="340" id = 'counter'>
+                        1
+                    </div>
+                </div>
+                <input type="button" id="hint" value="Подсказка" class="hint">      
                 <h1 class="title">
-                    WORDLE
+                    Угадай слово
                 </h1>
             </header>
+
+            <div class="letters" id ="letters">
+                <div class="letter" id="letter1">d</div>
+                <div class="letter" id="letter2">a</div>
+                <div class="letter" id="letter3">r</div>
+                <div class="letter" id="letter4">i</div>
+                <div class="letter" id="letter5">y</div>
+            </div>
             <div id="board-container">
                 <div id="board">
 
                 </div>
+
+                <input type="button" id="next" value="Пропустить" class="hint">    
+
+                <div class="animation">
+                    <canvas id="canvas" style="display: block;" width="300", height="300" class="canvas"> Your browser don't support canvas!</canvas> 
+                </div>
             </div>
 
+            
             <div id="keyboard-container">
                 <div class="keyboard-row">
                     <button data-key="q">q</button>
