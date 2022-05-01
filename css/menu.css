@@ -3,14 +3,12 @@ body{
 }
 
 .menu {
-    width: 1990px;
-    height: 1100px;
+    width: 80%;
+    padding: 10%;
     border: 5px solid rgb(0, 0, 0);
     box-shadow: 10px 15px 15px rgb(144, 144, 144);
-    margin-left: 15%;
-    margin-top: 5%;
-    background-image: url("../pictures/b.webp");
-    background-repeat: no-repeat;
+    background: url("../pictures/b.webp") no-repeat center center fixed;
+    background-size: cover;
     z-index: -1;
     display: flex;
     align-items: center;
