@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let counterWord = 0;
     let guessedWordCount = 0;
     let music = false;
+    let first_shufle = false;
 
     const keys = document.querySelectorAll('.keyboard-row button');
 
@@ -143,7 +144,12 @@ document.addEventListener("DOMContentLoaded", () => {
     updateWord(counterWord);
 
     function updateWord(counter){
-        const words = ['happy', 'about', 'black', 'dairy', 'enter', 'board', 'panic', 'noise', 'radar', 'radio', 'under', 'zebra', 'chaos'];
+        let words = ['happy', 'about', 'black', 'dairy', 'enter', 'board', 'panic', 'noise', 'radar', 'radio', 'under', 'zebra', 'chaos'];
+        
+        if (!first_shufle){
+            words.sort(() => Math.random() - 0.5);
+        }
+        
         word = words[counter];
 
         counterWord++;
@@ -156,7 +162,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function shuffleLetters(word){
         let shuffled = word.split('').sort(function(){return 0.5-Math.random()}).join('');
-        return shuffled;
+        console.log(shuffled);
+        console.log(word)
+        if (shuffled == word){
+            return shuffleLetters(word)
+        }
+        else{
+            return shuffled;
+        }
     }
 
     function inputShuffleLetters(word){
